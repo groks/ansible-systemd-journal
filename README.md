@@ -1,10 +1,10 @@
 systemd-journal
 ========
 
-An [ansible role](https://galaxy.ansibleworks.com/) to configure the systemd
-[journal](http://0pointer.de/blog/projects/systemctl-journal.html) to handle all
-logging and more tightly limit it's log storage, suitable for an SSD on
-a laptop.
+An [ansible role](https://galaxy.ansibleworks.com/list#/roles/221) to configure
+the systemd [journal](http://0pointer.de/blog/projects/systemctl-journal.html)
+to handle all logging and more tightly limit it's log storage, suitable for an
+SSD on a laptop.
 
 This role will remove the rsyslog package on F19 (already the default on F20)
 unless you tell it otherwise.
@@ -33,8 +33,8 @@ old logs if other data fills a disk. That's not very friendly for SSD drives so
 `systemd_journal_system_max_use` limits this to 500M by defaut, or whatever you
 customise it to.
 
-`systemd_journal_rsyslog_package_state` can be `absent` or `present` and if
-`absent` (the default) the `rsyslog` package will be removed.
+The `systemd_journal_rsyslog_package_state` variable can be `absent` or
+`present` and if absent (the default) the rsyslog package will be removed.
 
 Dependencies
 ------------
