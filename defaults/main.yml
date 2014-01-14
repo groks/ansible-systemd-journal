@@ -1,0 +1,5 @@
+---
+
+systemd_journal_rsyslog_package_state: absent
+systemd_journal_system_max_use: 500M
+systemd_journal_system_max_file_size: 50M

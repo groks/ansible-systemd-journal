@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: groks
+  description: "enable the systemd journal and limit it's appetite for disk space"
+  license: BSD
+  min_ansible_version: 1.3
+
+  platforms:
+    - name: Fedora
+      versions:
+        - 19
+        - 20
+
+  categories:
+    - system
+
+dependencies: []

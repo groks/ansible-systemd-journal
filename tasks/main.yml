@@ -1,0 +1,19 @@
+---
+
+- name: enable the journal for logging
+  file: state=directory mode=2755 owner=root group=systemd-journal path=/var/log/journal
+
+- name: (remove) the rsyslog package
+  yum: name=rsyslog state={{ systemd_journal_rsyslog_package_state }}
+
+- name: limit the total size of journald logs
+  lineinfile:
+    dest: /etc/systemd/journald.conf
+    regexp: ^SystemMaxUse=
+    line: SystemMaxUse={{ systemd_journal_system_max_use }}
+
+- name: limit the size of each journald log file
+  lineinfile:
+    dest: /etc/systemd/journald.conf
+    regexp: ^SystemMaxFileSize=
+    line: SystemMaxFileSize={{ systemd_journal_system_max_file_size }}
